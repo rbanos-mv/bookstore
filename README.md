@@ -1,8 +1,8 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Bookstore
 
-> Description the project.
+> This project is created with React/Redux. It is a two page website, a main page with a list of books and a categories page.
 
 ## Built With
 
