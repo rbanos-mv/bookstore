@@ -4,7 +4,6 @@
 
 > Description the project.
 
-
 ## Built With
 
 - Major languages
@@ -15,7 +14,6 @@
 
 [Live Demo Link](https://livedemo.com)
 
-
 ### Getting Started
 
 To get a local copy up and running follow these simple steps:
@@ -23,8 +21,8 @@ To get a local copy up and running follow these simple steps:
 1. Open your terminal and navigate to the folder you would like to put these files.
 2. Type these commands into the terminal:
 
-- `git clone https://github.com/rbanos-mv/math-magicians.git`
-- `cd math-magicians`
+- `git clone https://github.com/rbanos-mv/bookstore.git`
+- `cd bookstore`
 - `npm install`
 
 3. To build the app for producciont
