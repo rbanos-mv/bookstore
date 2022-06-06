@@ -6,13 +6,14 @@
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+- JavaScript-ES6
+- CSS3
+- ReactJS
+- Redux
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[GitHub Live Demo Link](https://rbanos-mv.github.io/bookstore/)
 
 ### Getting Started
 
