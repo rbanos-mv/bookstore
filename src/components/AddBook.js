@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../redux/books/books';
@@ -10,7 +10,7 @@ const newBookState = {
 
 const AddBook = () => {
   const dispatch = useDispatch();
-  const [book, changeBook] = React.useState(newBookState);
+  const [book, changeBook] = useState(newBookState);
 
   const changeTitle = (event) => {
     changeBook({
