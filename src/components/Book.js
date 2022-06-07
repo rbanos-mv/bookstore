@@ -9,7 +9,6 @@ const Book = (props) => {
       <h6>{author}</h6>
       <button type="button" id={id}>
         Remove
-        {' '}
       </button>
     </li>
   );
@@ -17,7 +16,7 @@ const Book = (props) => {
 
 export default Book;
 Book.propTypes = {
-  id: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
 };
