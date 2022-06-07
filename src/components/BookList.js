@@ -1,48 +1,38 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Book from './Book';
 
-const BOOKDATA = [
-  {
-    id: 1,
-    title: 'The Hunger Game',
-    author: 'Suzanne Collins',
-    category: 'action',
-  },
-  {
-    id: 2,
-    title: 'Dune',
-    author: 'Frank Herbert',
-    category: 'science fiction',
-  },
-  {
-    id: 3,
-    title: 'Capital in the Twenty-First Century',
-    author: 'Suzanne Collins',
-    category: 'economy',
-  },
-];
+const BookList = (props) => {
+  const { books } = props;
+  return (
+    <div>
+      <ul>
+        {books.map((book) => {
+          const { id, title, author } = book;
+          return (
+            <Book
+              key={id}
+              {...{
+                id,
+                title,
+                author,
+              }}
+            />
+          );
+        })}
+      </ul>
+    </div>
+  );
+};
 
-const BookList = () => (
-  <div>
-    <ul>
-      {BOOKDATA.map((book) => {
-        const {
-          id, title, author, category,
-        } = book;
-        return (
-          <Book
-            key={id}
-            {...{
-              id,
-              title,
-              author,
-              category,
-            }}
-          />
-        );
-      })}
-    </ul>
-  </div>
-);
+BookList.propTypes = {
+  books: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      author: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
 
 export default BookList;
