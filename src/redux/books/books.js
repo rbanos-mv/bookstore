@@ -1,12 +1,14 @@
-import { apiGetBooks } from '../../modules/api';
+import { apiAddBook, apiGetBooks } from '../../modules/api';
 
 const ADD = 'bookstore/Book/ADD';
 const GET = 'bookstore/Book/GET';
 const REMOVE = 'bookstore/Book/REMOVE';
 
-export function addBook(book) {
-  return { type: ADD, book };
-}
+export const addBook = (payload) => async (dispatch) => {
+  const book = { ...payload, item_id: payload.id, category: 'category' };
+  await apiAddBook(book);
+  dispatch({ type: ADD, book });
+};
 
 export const getBooks = () => async (dispatch) => {
   const data = await apiGetBooks();
