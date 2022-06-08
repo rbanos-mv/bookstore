@@ -1,4 +1,4 @@
-import { apiAddBook, apiGetBooks } from '../../modules/api';
+import { apiAddBook, apiGetBooks, apiRemoveBook } from '../../modules/api';
 
 const ADD = 'bookstore/Book/ADD';
 const GET = 'bookstore/Book/GET';
@@ -20,9 +20,10 @@ export const getBooks = () => async (dispatch) => {
   dispatch({ type: GET, books });
 };
 
-export function removeBook(id) {
-  return { type: REMOVE, id };
-}
+export const removeBook = (id) => async (dispatch) => {
+  await apiRemoveBook(id);
+  dispatch({ type: REMOVE, id });
+};
 
 export default function reducer(state = [], action = {}) {
   switch (action.type) {
