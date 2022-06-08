@@ -1,4 +1,3 @@
-import React from 'react';
 import { shallowEqual, useSelector } from 'react-redux';
 import AddBook from '../components/AddBook';
 import BookList from '../components/BookList';
