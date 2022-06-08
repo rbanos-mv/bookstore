@@ -19,22 +19,50 @@
 
 To get a local copy up and running follow these simple steps:
 
-1. Open your terminal and navigate to the folder you would like to put these files.
-2. Type these commands into the terminal:
+### Prerequisites
+
+Open your terminal and navigate to the folder you would like to save the project.
+
+### Setup
+
+Type these commands into the terminal:
 
 - `git clone https://github.com/rbanos-mv/bookstore.git`
 - `cd bookstore`
+
+You will need a `.env` file before you install and run the project. The `.env` file contains environment variables needed to deploy the webpage. There is a commented `.env.example` file you can use as a guide to configure your own. Type the following command into the terminal (or Git Bash, if using Windows) to create your `.env` file:
+
+- `cp .env.example .env`
+
+### Install
+
+Type this command into the terminal:
+
 - `npm install`
 
-3. To build the app for producciont
+### Build
+
+Type these commands into the terminal:
 
 - `npm run build`
-- Open `build/index.html` in you web browser.
+- Open `build/index.html` in your web browser.
 
-4. To run the app in the development mode
+### Run dev server
+
+Type these commands into the terminal:
 
 - `npm run start`
-- Open [http://localhost:3000](http://localhost:3000) to view it in your browser
+- Your web browser will open on [http://localhost:3000](http://localhost:3000)
+
+### Run tests
+
+Type this command into the terminal:
+
+- `npm run test`
+
+### Deployment
+
+- `npm run deploy`
 
 ## Authors
 
@@ -56,9 +84,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Microverse](https://www.microverse.org/) for the motivation.
 
 ## 📝 License
 
