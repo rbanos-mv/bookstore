@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
+import { CircularProgressBar } from '@tomik23/react-circular-progress-bar';
 import { removeBook } from '../redux/books/books';
 
 const Book = (props) => {
@@ -20,6 +21,13 @@ const Book = (props) => {
         </button>
       </div>
       <div className="bookProgress">
+        <CircularProgressBar
+          percent={percent}
+          animationSmooth="ls ease-out"
+          colorCircle="#f1f1f1"
+          colorSlice="#0290ff"
+          size={75}
+        />
         <div className="progressText">
           <p className="presentage-text">
             {percent}
