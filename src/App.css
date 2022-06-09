@@ -29,16 +29,26 @@ ul {
   padding: 0;
 }
 
+.column,
 .row {
   display: flex;
+}
+
+.column {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.row {
   flex-direction: row;
   align-items: center;
 }
 
-.column {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+.text-style {
+  color: var(--white);
+  font-family: RobotoSlab, serif;
+  font-size: 0.813rem;
+  letter-spacing: 0.5px;
 }
 
 .text-style-3 {
@@ -81,4 +91,59 @@ a {
   padding: 1rem;
   position: absolute;
   right: 6.25rem;
+}
+
+.container {
+  padding: 2.313rem 6.25rem 0;
+  margin-bottom: 120px;
+}
+
+form {
+  justify-content: space-between;
+}
+
+form button,
+form input,
+form select {
+  color: var(--very-light-pink);
+  font-size: 1rem;
+  letter-spacing: -0.15px;
+  background-color: var(--white);
+  border: solid 1px var(--white2);
+  border-radius: 4px;
+  height: 2.813rem;
+  outline: none;
+  padding: 0 10px;
+}
+
+form button {
+  background-color: var(--azure);
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+form input {
+  width: calc((100% - 270px) / 2);
+}
+
+form select {
+  cursor: pointer;
+}
+
+.formContainer {
+  margin: 20px 0;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.formTitle {
+  border-top: 1px solid var(--white2);
+  color: var(--warm-grey);
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  margin: 0;
+  padding-bottom: 1.188rem;
+  padding-top: 1.813rem;
+  text-transform: uppercase;
 }

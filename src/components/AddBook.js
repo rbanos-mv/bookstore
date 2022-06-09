@@ -51,9 +51,9 @@ const AddBook = () => {
   };
 
   return (
-    <div>
-      <h3>Add new book</h3>
-      <form onSubmit={addNewBook}>
+    <div className="column formContainer">
+      <h2 className="formTitle">Add new book</h2>
+      <form className="row" onSubmit={addNewBook}>
         <input
           type="text"
           id="title"
@@ -71,13 +71,17 @@ const AddBook = () => {
           required
         />
         <select value={category} onChange={changeCategory} required>
-          <option value="">Select category</option>
+          <option value="" selected>
+            Select category
+          </option>
           <option value="History">History</option>
           <option value="Fiction">Fiction</option>
           <option value="Novel">Novel</option>
           <option value="Science">Science</option>
         </select>
-        <button type="submit">Add Book</button>
+        <button type="submit" className="text-style">
+          Add Book
+        </button>
       </form>
     </div>
   );
