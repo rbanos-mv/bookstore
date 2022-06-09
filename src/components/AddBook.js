@@ -72,10 +72,10 @@ const AddBook = () => {
         />
         <select value={category} onChange={changeCategory} required>
           <option value="">Select category</option>
-          <option value="History">History</option>
-          <option value="Fiction">Fiction</option>
-          <option value="Novel">Novel</option>
+          <option value="Action">Action</option>
+          <option value="Economy">Economy</option>
           <option value="Science">Science</option>
+          <option value="Science Fiction">Science Fiction</option>
         </select>
         <button type="submit" className="text-style">
           Add Book
