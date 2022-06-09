@@ -1,5 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --azure: #0290ff;
+  --white: white;
+  --white2: #e8e8e8;
+  --white3: #fafafa;
+  --black2: #121212;
+  --cool-blue: #4386bf;
+  --pale-grey: #f5f6fa;
+  --warm-grey: #888;
+  --very-light-pink: #c4c4c4;
 }
