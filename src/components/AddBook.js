@@ -71,9 +71,7 @@ const AddBook = () => {
           required
         />
         <select value={category} onChange={changeCategory} required>
-          <option value="" selected>
-            Select category
-          </option>
+          <option value="">Select category</option>
           <option value="History">History</option>
           <option value="Fiction">Fiction</option>
           <option value="Novel">Novel</option>
