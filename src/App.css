@@ -18,3 +18,67 @@
   --warm-grey: #888;
   --very-light-pink: #c4c4c4;
 }
+
+body {
+  background-color: var(--pale-grey);
+  font-family: Montserrat, sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.column {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.text-style-3 {
+  color: var(--black2);
+  font-size: 0.813rem;
+  letter-spacing: 1.9px;
+}
+
+header {
+  justify-content: flex-start;
+  background-color: var(--white);
+  cursor: pointer;
+  margin-top: 9.313rem;
+  padding: 0 6.25rem;
+  height: 5.938rem;
+}
+
+.menu {
+  justify-content: flex-start;
+}
+
+.title {
+  color: var(--azure);
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+a {
+  color: var(--black2);
+  font-size: 0.813rem;
+  margin-left: 2.563rem;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.fa-user {
+  border: 1px solid var(--white2);
+  border-radius: 100%;
+  color: var(--azure);
+  padding: 1rem;
+  position: absolute;
+  right: 6.25rem;
+}
