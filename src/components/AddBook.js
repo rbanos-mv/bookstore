@@ -11,7 +11,7 @@ const newBookState = {
 const AddBook = () => {
   const dispatch = useDispatch();
   const [book, changeBook] = useState(newBookState);
-
+  const { category, title, author } = book;
   const changeTitle = (event) => {
     changeBook({
       ...book,
@@ -26,13 +26,22 @@ const AddBook = () => {
     });
   };
 
+  const changeCategory = (event) => {
+    changeBook({
+      ...book,
+      category: event.target.value,
+    });
+  };
+
   const addNewBook = (event) => {
     event.preventDefault();
     const author = (book.author || '').trim();
     const title = (book.title || '').trim();
-    if (author + title !== '') {
+    const category = (book.category || '').trim();
+    if (author !== '' && title !== '' && category !== '') {
       const newBook = {
         id: uuidv4(),
+        category,
         author,
         title,
       };
@@ -49,16 +58,25 @@ const AddBook = () => {
           type="text"
           id="title"
           placeholder="Book Title"
-          value={book.title}
+          value={title}
           onChange={changeTitle}
+          required
         />
         <input
           type="text"
           id="author"
           placeholder="Author"
-          value={book.author}
+          value={author}
           onChange={changeAuthor}
+          required
         />
+        <select value={category} onChange={changeCategory} required>
+          <option value="">Select category</option>
+          <option value="History">History</option>
+          <option value="Fiction">Fiction</option>
+          <option value="Novel">Novel</option>
+          <option value="Science">Science</option>
+        </select>
         <button type="submit">Add Book</button>
       </form>
     </div>
