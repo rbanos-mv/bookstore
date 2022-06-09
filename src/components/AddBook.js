@@ -11,7 +11,7 @@ const newBookState = {
 const AddBook = () => {
   const dispatch = useDispatch();
   const [book, changeBook] = useState(newBookState);
-
+  const { category, title, author } = book;
   const changeTitle = (event) => {
     changeBook({
       ...book,
@@ -26,13 +26,22 @@ const AddBook = () => {
     });
   };
 
+  const changeCategory = (event) => {
+    changeBook({
+      ...book,
+      category: event.target.value,
+    });
+  };
+
   const addNewBook = (event) => {
     event.preventDefault();
     const author = (book.author || '').trim();
     const title = (book.title || '').trim();
-    if (author + title !== '') {
+    const category = (book.category || '').trim();
+    if (author !== '' && title !== '' && category !== '') {
       const newBook = {
         id: uuidv4(),
+        category,
         author,
         title,
       };
@@ -42,24 +51,35 @@ const AddBook = () => {
   };
 
   return (
-    <div>
-      <h3>Add new book</h3>
-      <form onSubmit={addNewBook}>
+    <div className="column formContainer">
+      <h2 className="formTitle">Add new book</h2>
+      <form className="row" onSubmit={addNewBook}>
         <input
           type="text"
           id="title"
           placeholder="Book Title"
-          value={book.title}
+          value={title}
           onChange={changeTitle}
+          required
         />
         <input
           type="text"
           id="author"
           placeholder="Author"
-          value={book.author}
+          value={author}
           onChange={changeAuthor}
+          required
         />
-        <button type="submit">Add Book</button>
+        <select value={category} onChange={changeCategory} required>
+          <option value="">Select category</option>
+          <option value="Action">Action</option>
+          <option value="Economy">Economy</option>
+          <option value="Science">Science</option>
+          <option value="Science Fiction">Science Fiction</option>
+        </select>
+        <button type="submit" className="text-style">
+          Add Book
+        </button>
       </form>
     </div>
   );

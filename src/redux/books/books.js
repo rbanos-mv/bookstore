@@ -4,19 +4,25 @@ const ADD = 'bookstore/Book/ADD';
 const GET = 'bookstore/Book/GET';
 const REMOVE = 'bookstore/Book/REMOVE';
 
+const calculateFields = (book, key = '') => {
+  const percent = Math.random();
+  return {
+    id: key,
+    ...book,
+    percent: Math.ceil(100 * percent),
+    chapter: Math.ceil(20 * percent),
+  };
+};
+
 export const addBook = (payload) => async (dispatch) => {
-  const book = { ...payload, item_id: payload.id, category: 'category' };
+  const book = { ...calculateFields(payload), item_id: payload.id };
   await apiAddBook(book);
   dispatch({ type: ADD, book });
 };
 
 export const getBooks = () => async (dispatch) => {
   const data = await apiGetBooks();
-  const books = Object.keys(data).map((key) => {
-    const book = data[key][0];
-    book.id = key;
-    return book;
-  });
+  const books = Object.keys(data).map((key) => calculateFields(data[key][0], key));
   dispatch({ type: GET, books });
 };
 

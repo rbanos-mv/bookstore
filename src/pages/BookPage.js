@@ -5,7 +5,7 @@ import BookList from '../components/BookList';
 const BookPage = () => {
   const bookList = useSelector((state) => state.books, shallowEqual);
   return (
-    <div>
+    <div className="container">
       <BookList books={bookList} />
       <AddBook />
     </div>
